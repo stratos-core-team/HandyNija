@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HandyNija — Trusted Workers in Abuja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-mark">H</span>
+      HandyNija
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it Works</a>
+    </div>
+    <a href="#waitlist" class="nav-btn">Join Waitlist →</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#how" onclick="closeMobile()">How it Works</a>
+    <a href="#waitlist" class="mobile-cta" onclick="closeMobile()">Join Waitlist</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🇳🇬 Launching in Abuja First</div>
+    <h1>
+      Skilled hands.<br/>
+      <em>When you need them.</em>
+    </h1>
+    <p class="hero-sub">
+      Connect with verified electricians, plumbers, and Mechanics in Abuja, instantly.
+      No referrals. No stress. Just reliable professionals.
+    </p>
+    <div class="hero-actions">
+      <a href="#waitlist" class="btn-primary">Hire a Worker</a>
+      <a href="#waitlist" class="btn-ghost">List Your Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span>3</span><small>Services</small></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span>Abuja</span><small>Coverage</small></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span>Verified</span><small>Workers</small></div>
+    </div>
+    <!-- Decorative floating cards -->
+    <div class="floating-cards" aria-hidden="true">
+      <div class="float-card fc1">
+        <div class="fc-icon">⚡</div>
+        <div class="fc-info"><strong>Emeka A.</strong><span>Electrician · ★ 4.9</span></div>
+      </div>
+      <div class="float-card fc2">
+        <div class="fc-icon">🚰</div>
+        <div class="fc-info"><strong>Amina B.</strong><span>Plumber · ★ 4.8</span></div>
+      </div>
+    </div>
+    <div class="hero-blob" aria-hidden="true"></div>
+  </section>
+
+  <!-- WHY HANDYNIJA -->
+  <section class="why">
+    <div class="section-label">Why HandyNija?</div>
+    <h2>The smarter way to find<br/>help around your home</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🛡</div>
+        <h3>Fully Verified</h3>
+        <p>Every worker is background-checked and skill-verified before they appear on our platform.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📍</div>
+        <h3>Near You</h3>
+        <p>We match you with professionals in your area of Abuja for fast, local service.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>Real Reviews</h3>
+        <p>Read genuine ratings from customers who've used each worker before you book.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Fast Booking</h3>
+        <p>Search, choose, and schedule in under two minutes. No phone calls required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="section-label">The Process</div>
+    <h2>Three steps to a<br/>job well done</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Search</h3>
+          <p>Browse verified workers in your neighborhood and filter by skill, rating, and availability.</p>
+        </div>
+      </div>
+      <div class="how-arrow" aria-hidden="true">→</div>
+      <div class="how-step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Book</h3>
+          <p>Pick a professional, choose a time, and confirm your booking instantly, no back-and-forth.</p>
+        </div>
+      </div>
+      <div class="how-arrow" aria-hidden="true">→</div>
+      <div class="how-step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Relax</h3>
+          <p>Your verified worker shows up on time. Job done. Leave a review to help the community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-label">Available Services</div>
+    <h2>What we cover</h2>
+    <div class="services-grid">
+      <div class="service-tile st-elec">
+        <div class="st-emoji">⚡</div>
+        <h3>Electricians</h3>
+        <p>Wiring, installations, faults, generators, and more.</p>
+        <a href="#waitlist" class="st-link">Book now →</a>
+      </div>
+      <div class="service-tile st-plumb">
+        <div class="st-emoji">🚰</div>
+        <h3>Plumbers</h3>
+        <p>Leaks, fixtures, tanks, drainage, and pipe repairs.</p>
+        <a href="#waitlist" class="st-link">Book now →</a>
+      </div>
+      <div class="service-tile st-mechanic">
+        <div class="st-emoji">🔧</div>
+        <h3>Mechanics</h3>
+        <p>Trusted mechanics for repairs, diagnostics, and car servicing.</p>
+        <a href="#waitlist" class="st-link">Book now →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / EMOTIONAL -->
+  <section class="mission">
+    <div class="mission-inner">
+      <div class="mission-flag">🇳🇬</div>
+      <h2>Built for skilled<br/>Nigerians</h2>
+      <p>
+        Millions of talented Nigerians have the skills to transform homes, but lack the visibility to reach customers.
+        HandyNija closes that gap, helping trusted workers grow their income while connecting families with
+        reliable professionals they can actually count on.
+      </p>
+      <a href="#waitlist" class="btn-primary">Be Part of the Movement</a>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="waitlist" id="waitlist">
+    <div class="waitlist-inner">
+      <div class="waitlist-copy">
+        <div class="section-label" style="color:#FF8A00;">Early Access</div>
+        <h2>Get in before<br/>everyone else</h2>
+        <p>Join the waitlist now and be among the first to access HandyNija when we launch in Abuja.</p>
+        <ul class="waitlist-perks">
+          <li>✓ Priority access at launch</li>
+          <li>✓ Free first booking for early users</li>
+          <li>✓ Workers get profile boost</li>
+        </ul>
+      </div>
+      <div class="waitlist-form-wrap">
+        <form id="waitlistForm" class="waitlist-form">
+  
+          <div class="field-group">
+            <label>Full Name</label>
+            <input 
+              type="text" 
+              name="fullname" 
+              placeholder="e.g. Amaka Okonkwo" 
+              required
+            />
+          </div>
+
+          <div class="field-group">
+            <label>Phone Number</label>
+            <input 
+              type="tel" 
+              name="phone" 
+              placeholder="e.g. 0801 234 5678" 
+              required
+            />
+          </div>
+
+          <div class="field-group">
+            <label>Location in Abuja</label>
+            <input 
+              type="text" 
+              name="location" 
+              placeholder="e.g. Wuse 2, Garki, Gwarinpa" 
+              required
+            />
+          </div>
+
+          <div class="field-row">
+
+            <div class="field-group">
+              <label>I am a…</label>
+              <select name="role" required>
+                <option value="">Select role</option>
+                <option>Customer</option>
+                <option>Service Worker</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label>Service Type</label>
+              <select name="service" required>
+                <option value="">Select service</option>
+                <option>Electrician</option>
+                <option>Plumber</option>
+                <option>Mechanics</option>
+              </select>
+            </div>
+
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Join the Waitlist →
+          </button>
+
+          <p class="form-note">
+            No spam. We'll only reach out about your launch access.
+          </p>
+
+          <p id="formMessage"></p>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">H</span>HandyNija
+        </div>
+        <p>Trusted local services across Nigeria.<br/>Starting in Abuja. 🇳🇬</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#how">How it Works</a>
+        <a href="#waitlist">Join Waitlist</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2026 HandyNija. All rights reserved.</small>
+      <small>Launching first in Abuja, Nigeria.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
