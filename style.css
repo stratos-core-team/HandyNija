@@ -544,8 +544,16 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr; }
 }
 
 .service-tile {
@@ -567,9 +575,12 @@ body {
 
 .service-tile:hover { transform: translateY(-4px); }
 
+.st-mechanic { background: linear-gradient(135deg, #1A1A2E, #16213E); }
 .st-elec { background: linear-gradient(135deg, #0E7A45, #0A5A33); }
 .st-plumb { background: linear-gradient(135deg, #1A5276, #0E3460); }
 .st-clean { background: linear-gradient(135deg, #5D4037, #3E2723); }
+.st-barber { background: linear-gradient(135deg, #6B2D6B, #4A1A4A); }
+.st-other { background: linear-gradient(135deg, #2C3E50, #1A252F); border: 1px dashed rgba(255,255,255,0.15); }
 
 .st-emoji {
   font-size: 2.5rem;

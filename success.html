@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're In! — HandyNija</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green: #0E7A45;
+      --green-light: #12A35C;
+      --green-pale: #E6F4EE;
+      --amber: #FF8A00;
+      --black: #0D0D0D;
+      --gray-500: #6B6B6B;
+      --gray-100: #F5F5F2;
+      --white: #FFFFFF;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 7%;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    /* MAIN */
+    .page {
+      min-height: calc(100vh - 65px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 7%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background blobs */
+    .blob-1 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(14,122,69,0.08) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .blob-2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(255,138,0,0.06) 0%, transparent 70%);
+      bottom: -80px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 28px;
+      padding: 60px 52px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 2;
+      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.88) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Checkmark circle */
+    .check-wrap {
+      width: 88px;
+      height: 88px;
+      background: var(--green-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      position: relative;
+    }
+
+    .check-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2px dashed rgba(14,122,69,0.25);
+      animation: spinSlow 12s linear infinite;
+    }
+
+    @keyframes spinSlow {
+      to { transform: rotate(360deg); }
+    }
+
+    .check-icon {
+      font-size: 2.4rem;
+      animation: bounceIn 0.6s ease 0.3s both;
+    }
+
+    @keyframes bounceIn {
+      0%   { transform: scale(0); opacity: 0; }
+      60%  { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-pale);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      font-family: var(--font-head);
+      animation: fadeUp 0.5s ease 0.2s both;
+    }
+
+    h1 {
+      font-family: var(--font-head);
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 16px;
+      animation: fadeUp 0.5s ease 0.3s both;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      animation: fadeUp 0.5s ease 0.4s both;
+    }
+
+    /* What's next list */
+    .next-steps {
+      background: var(--gray-100);
+      border-radius: 16px;
+      padding: 24px 28px;
+      text-align: left;
+      margin-bottom: 32px;
+      animation: fadeUp 0.5s ease 0.5s both;
+    }
+
+    .next-steps p {
+      font-family: var(--font-head);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+    }
+
+    .next-steps ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .next-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .next-steps li span.dot {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Buttons */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.5s ease 0.6s both;
+    }
+
+    .btn-primary {
+      text-decoration: none;
+      background: var(--green);
+      color: var(--white);
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-family: var(--font-head);
+      font-size: 0.92rem;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(14,122,69,0.25);
+    }
+
+    .btn-primary:hover {
+      background: #0A5A33;
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      text-decoration: none;
+      background: transparent;
+      color: var(--black);
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: var(--font-head);
+      font-size: 0.92rem;
+      border: 1.5px solid rgba(0,0,0,0.12);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-pale);
+    }
+
+    /* Confetti dots */
+    .confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 24px 7%;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .footer small {
+      font-size: 0.78rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 540px) {
+      .card { padding: 40px 24px; }
+      .btn-row { flex-direction: column; }
+      .btn-primary, .btn-ghost { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Confetti -->
+  <div class="confetti" id="confetti"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-mark">H</span>
+      HandyNija
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="page">
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+
+    <div class="card">
+
+      <div class="check-wrap">
+        <span class="check-icon">✅</span>
+      </div>
+
+      <div class="tag">You're on the list!</div>
+
+      <h1>Welcome to<br/><em>HandyNija</em> 🇳🇬</h1>
+
+      <p class="subtitle">
+        You've successfully joined the waitlist. We'll reach out as soon as
+        HandyNija launches in your state — stay close!
+      </p>
+
+      <div class="next-steps">
+        <p>What happens next</p>
+        <ul>
+          <li>
+            <span class="dot">1</span>
+            We review your submission and confirm your spot.
+          </li>
+          <li>
+            <span class="dot">2</span>
+            You'll get an SMS or call when we launch in your area.
+          </li>
+          <li>
+            <span class="dot">3</span>
+            Early users get priority access and a free first booking.
+          </li>
+        </ul>
+      </div>
+
+      <div class="btn-row">
+        <a href="index.html" class="btn-primary">Back to Home</a>
+        <a href="https://wa.me/?text=I just joined the HandyNija waitlist! 🇳🇬 Find trusted mechanics, electricians, plumbers, cleaners %26 barbers near you. Join here: handynija.com" target="_blank" class="btn-ghost">Share with Friends</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>© 2026 HandyNija · Trusted local services across Nigeria 🇳🇬</small>
+  </footer>
+
+  <script>
+    // Generate confetti on load
+    const confettiEl = document.getElementById('confetti');
+    const colors = ['#0E7A45', '#FF8A00', '#12A35C', '#FFC107', '#E6F4EE', '#fff'];
+
+    for (let i = 0; i < 60; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.style.left = Math.random() * 100 + 'vw';
+      dot.style.top = '-10px';
+      dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+      dot.style.width = (6 + Math.random() * 8) + 'px';
+      dot.style.height = dot.style.width;
+      dot.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+      dot.style.animationDelay = (Math.random() * 1.5) + 's';
+      dot.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      confettiEl.appendChild(dot);
+    }
+  </script>
+
+</body>
+</html>
