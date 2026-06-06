@@ -41,7 +41,7 @@ if (waitlistForm) {
     const formData = new FormData(waitlistForm);
 
     try {
-      const response = await fetch('https://https://formspree.io/f/xwvjpljk', {
+      const response = await fetch('https://formspree.io/f/xwvjpljk', {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' }
